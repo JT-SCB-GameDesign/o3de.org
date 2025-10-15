@@ -4,6 +4,9 @@ disableKinds = ["taxonomy", "term"]
 copyright = "O3DE Open 3D Engine Contributors | Documentation Distributed under CC-BY 4.0"
 languageCode = "en-us"
 
+enableGitInfo = true
+enableRobotsTXT = true 
+
 [module]
   # Uncomment and modify as necessary to test local versions of imports.
   # Be sure to comment out again before commit.
@@ -23,20 +26,22 @@ languageCode = "en-us"
       source = "gems"
       target = "static/docs/api/gems"
     [[module.imports.mounts]]
-      source = "content/frameworks"
-      target = "content/frameworks"
-    [[module.imports.mounts]]
-      source = "content/gems"
-      target = "content/gems"
+      source = "content"
+      target = "content/docs/api"
 
-enableGitInfo = true
-enableRobotsTXT = true 
-
-[markup.highlight]
-style = "paraiso-dark"
-
-[markup.goldmark.renderer]
-unsafe = true
+[markup]
+  [markup.highlight]
+    style = "paraiso-dark"
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
+    [markup.goldmark.renderer]
+      unsafe = true
+  
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
@@ -51,17 +56,18 @@ unsafe = true
   contentDir = "/content/"
   docsDir = "/docs/"
   sourceRepo = "https://github.com/o3de/o3de"
+  math = true
 
 [params.docs]
 # Docs version data format: ["display name", "baseURL"]
 # Note: A version that has "www.o3de.org" in its baseURL will get " (latest)" appended to its display name in the version selector.
 versions = [
-  ["25.05", "https://docs.o3de.org"],
+  ["25.10", "https://docs.o3de.org"],
   ["development", "https://development--o3deorg.netlify.app"],
+  ["25.05", "https://version-2505--o3deorg.netlify.app"],
   ["24.09", "https://version-2409--o3deorg.netlify.app"],
   ["23.10", "https://version-2310--o3deorg.netlify.app"],
-  ["23.05", "https://version-2305--o3deorg.netlify.app"],
-  ["22.10", "https://version-2210--o3deorg.netlify.app"]
+  ["23.05", "https://version-2305--o3deorg.netlify.app"]
 ]
 
 [params.logos]
@@ -116,9 +122,9 @@ versions = [
   weight = 5
 
 # [[menu.main]]
-# name = "News"
-# url ="#"
-# weight = 2
+  # name = "News"
+  # url ="#"
+  # weight = 2
 
 [[menu.main]]
   name = "GET STARTED"
@@ -132,10 +138,10 @@ versions = [
   identifier = "community"
 
 # [[menu.main]]
-# name = "Community subitem placeholder"
-# url = "#"
-# weight = 5 
-# parent = "community"
+  # name = "Community subitem placeholder"
+  # url = "#"
+  # weight = 5 
+  # parent = "community"
 
 [[menu.main]]
   name = "LEARN"
