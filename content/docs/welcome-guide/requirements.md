@@ -94,7 +94,8 @@ After installing the C++ redistributable, you might be prompted to restart your 
 
   {{< note >}}
   The 25.10.1 point release introduces support for Visual Studio 2026. But, users are required to use a more recent CMake version (4.2.0)
-
+  {{< /note >}}
+  
 [CMake {{< versions/cmake >}} or later](https://cmake.org/download/#latest) is required to configure and build O3DE projects. We strongly recommend that you install the **Latest Release** from the CMake download page instead of a Release Candidate. During installation, select one of the options that adds CMake to the system PATH. This will save you from having to do this later.
 
    ![Add CMake to the system PATH during installation](/images/welcome-guide/requirements-cmake-install-add-to-path.png)
