@@ -122,9 +122,9 @@ versions = [
   weight = 5
 
 # [[menu.main]]
-# name = "News"
-# url ="#"
-# weight = 2
+  # name = "News"
+  # url ="#"
+  # weight = 2
 
 [[menu.main]]
   name = "GET STARTED"
@@ -138,10 +138,10 @@ versions = [
   identifier = "community"
 
 # [[menu.main]]
-# name = "Community subitem placeholder"
-# url = "#"
-# weight = 5 
-# parent = "community"
+  # name = "Community subitem placeholder"
+  # url = "#"
+  # weight = 5 
+  # parent = "community"
 
 [[menu.main]]
   name = "LEARN"
