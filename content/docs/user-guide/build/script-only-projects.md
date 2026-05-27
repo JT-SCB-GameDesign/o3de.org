@@ -40,7 +40,7 @@ To switch back to a 'normal' project, flip the same above flag to false, or remo
 You can then start adding C++ components to your project or use the [template](/docs/user-guide/build/templates.md) system to instantiate new c++ components.  You may need to modify the CMake build files to include new subdirectories containing code, just like any project.
 
 ## Shipping a Script-only project
-Script-only projects do include a script at the root to export the project into a standalone project.  See the [Project Export](content/docs/user-guide/packaging/project-export) documentation for details on how project export functions, as it is the same export system used as regular projects.
+Script-only projects do include a script at the root to export the project into a standalone project.  See the [Project Export](/docs/user-guide/packaging/project-export) documentation for details on how project export functions, as it is the same export system used as regular projects.
 
 ## Trade-offs to be aware of
 
@@ -63,5 +63,4 @@ Finally, a 'fake' game launcher for the project is declared to CMake which depen
 
 Because the compiler and linker are fake, CMake will not actually compile or link this 'fake' target, but will still consider it to have succeeded, and copy the things it depends on (recursively) to the binaries folder, which is how the generic game launcher and all its dependencies end up in the binaries folder.
 
-This means that developers wishing to support Script-only mode for their modules can do so, but would need to ship with pre-built shared libraries which are exposed as `add_library(name SHARED IMPORTED GLOBAL)` in cmake and list their runtime dependencies in that declaration using normal cmake conventions. 
-  
+This means that developers wishing to support Script-only mode for their modules can do so, but would need to ship with pre-built shared libraries which are exposed as `add_library(name SHARED IMPORTED GLOBAL)` in cmake and list their runtime dependencies in that declaration using normal cmake conventions.
